@@ -1,8 +1,8 @@
-driver.out: MMHeap.o driver.o
-	g++ -ansi -Wall MMHeap.o driver.o -o driver.out
+driver.out: MMHeap.o Driver.o
+	g++ -ansi -Wall MMHeap.o Driver.o -o driver.out
 
-driver.o: driver.cpp MMHeap.cpp
-	g++ -ansi -Wall -c driver.cpp MMHeap.cpp
+driver.o: Driver.cpp MMHeap.cpp
+	g++ -ansi -Wall -c Driver.cpp MMHeap.cpp
 
 
 clean:
