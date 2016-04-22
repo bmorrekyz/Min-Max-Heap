@@ -60,7 +60,6 @@ int main(int argc, char *argv[])
 	theHeap.insert(94);
 	theHeap.insert(74);
 	theHeap.dump();
-	cout << theHeap.size() << endl;
 
  
 

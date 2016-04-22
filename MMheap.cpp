@@ -32,7 +32,7 @@ MMheap<Comparable>::~MMheap()
 template <typename Comparable>
 int MMheap<Comparable>::size() 
 {
-	return m_heap.size();
+	return m_heap.size() - 1;
 }
 
 template <typename Comparable>

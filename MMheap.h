@@ -22,57 +22,57 @@ class MMheap
 {
 public:
 
-	/*	Description:    
-		Pre-condition:  
-		Post-condition:	
+	/*	Description:    MMheap
+		Pre-condition:  none
+		Post-condition:	constructs a default MMheap object
 	*/
 	MMheap();
 
-	/*	Description:    
-		Pre-condition:  
-		Post-condition:	
+	/*	Description:    ~MMheap
+		Pre-condition:  none
+		Post-condition:	destroys the MMheap object
 	*/
 	~MMheap();
 
-	/*	Description:    
-		Pre-condition:  
-		Post-condition:	
+	/*	Description:    size()
+		Pre-condition:  none
+		Post-condition:	returns current heap size
 	*/	
 	int size(); 
 
-	/*	Description:    
-		Pre-condition:  
-		Post-condition:	
+	/*	Description:    dump()
+		Pre-condition:  none
+		Post-condition:	displays heap data (size, min, max, last level, items)
 	*/
 	void dump();
 
-	/*	Description:    
-		Pre-condition:  
-		Post-condition:	
+	/*	Description:    insert()
+		Pre-condition:  a valid data element
+		Post-condition:	an element is inserted into the heap
 	*/
 	void insert(Comparable x);
 
-	/*	Description:    
-		Pre-condition:  
-		Post-condition:	
+	/*	Description:    getMin()
+		Pre-condition:  none
+		Post-condition:	returns the min item in the heap
 	*/
 	Comparable getMin();
 
-	/*	Description:    
-		Pre-condition:  
-		Post-condition:	
+	/*	Description:    getMax()
+		Pre-condition:  none
+		Post-condition:	returns the max item in the heap
 	*/
 	Comparable getMax();
 
-	/*	Description:    
-		Pre-condition:  
-		Post-condition:	
+	/*	Description:    deleteMin()
+		Pre-condition:  none
+		Post-condition:	returns the deleted min item in a heap
 	*/
 	Comparable deleteMin();
 
-	/*	Description:    
-		Pre-condition:  
-		Post-condition:	
+	/*	Description:    deleteMax()
+		Pre-condition:  none
+		Post-condition:	returns the max item from a heap
 	*/	
 	Comparable deleteMax();
 
