@@ -1,3 +1,14 @@
+/*****************************************
+** File:    MMheap.cpp
+** Project: CMSC 341 Project 4, Spring 2016
+** Author:  Dinara Sagitova
+** Date:    4/22/16
+** Section: 04
+** E-mail:  dsagit1@umbc.edu 
+**
+**   This file contains the implementation of the MMheap class.
+***********************************************/
+
 #ifndef MMHEAP_CPP
 #define MMHEAP_CPP
 
@@ -21,7 +32,7 @@ MMheap<Comparable>::~MMheap()
 template <typename Comparable>
 int MMheap<Comparable>::size() 
 {
-	return 0;
+	return m_heap.size();
 }
 
 template <typename Comparable>
@@ -33,8 +44,8 @@ void MMheap<Comparable>::dump()
 template <typename Comparable>
 void MMheap<Comparable>::insert(Comparable x)
 {
-	cout << "insert(Comparable x)\n" << endl;
-	cout << "inserted element: " << x << endl;
+	cout << "insert(Comparable x)" << endl;
+	cout << "inserted element: " << x << "\n" << endl;
 }
 
 template <typename Comparable>
@@ -44,9 +55,22 @@ Comparable MMheap<Comparable>::getMin()
 }
 
 template <typename Comparable>
+Comparable MMheap<Comparable>::getMax()
+{
+	cout << "getMax()" << endl;
+}
+
+
+template <typename Comparable>
 Comparable MMheap<Comparable>::deleteMin()
 {
 	cout << "deleteMin()" << endl;
+}
+
+template <typename Comparable>
+Comparable MMheap<Comparable>::deleteMax()
+{
+	cout << "deleteMax()" << endl;
 }
 
 #endif
