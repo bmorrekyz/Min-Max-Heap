@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <vector>
+#include <math.h> 
 
 using namespace std;
 
@@ -27,6 +28,12 @@ public:
 		Post-condition:	constructs a default MMheap object
 	*/
 	MMheap();
+
+	/*	Description:    MMheap( const vector<Comparable> &v )
+		Pre-condition:  vector containing the initial items
+		Post-condition:	constructs 
+	*/	
+	MMheap( const vector<Comparable> &v );
 
 	/*	Description:    ~MMheap
 		Pre-condition:  none
@@ -46,11 +53,11 @@ public:
 	*/
 	void dump();
 
-	/*	Description:    insert()
+	/*	Description:    insert(const Comparable &x)
 		Pre-condition:  a valid data element
 		Post-condition:	an element is inserted into the heap
 	*/
-	void insert(Comparable x);
+	void insert(const Comparable &x);
 
 	/*	Description:    getMin()
 		Pre-condition:  none
@@ -76,42 +83,24 @@ public:
 	*/	
 	Comparable deleteMax();
 
+	void percolateDown( int hole );
+	
+	int getLevel(int hole);
+
+	bool isMinLevel(int hole);
+
+	bool isMaxLevel(int hole);
+
+
 private:
-
-	/* Node class for a MinMaxHeap */
-	class MMNode
-	{
-		Comparable data;
-		MMNode *leftChild;
-		MMNode *rightChild;
-		MMNode *parent;
-		int index, leftChildIndex, rightChildIndex;
-		int level;
-		int parentLevel;
-
-		/* default constructor */
-		MMNode() 
-		{	
-			data = NULL;
-			leftChild = NULL;
-			rightChild = NULL;
-			parent = NULL;
-			index = 0;
-			leftChildIndex = NULL;
-			rightChildIndex = NULL;
-			level = 0;
-			parentLevel = NULL;
-		}
-
-	};
 
 	/* DATA MEMBERS */
 
-	MMNode *dummyNode;
-
 	int m_size;
 
-	vector<MMNode*> m_heap;
+	vector<Comparable> m_heap;
+
+	void buildHeap();
 
 };
 

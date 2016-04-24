@@ -1,0 +1,299 @@
+Script started on Sat 23 Apr 2016 10:15:32 AM EDT
+]0;dina@pc: ~/Desktop/341_project_4dina@pc:~/Desktop/341_project_4$ exitxinput disable 13ls[Kgit push origin v_1 commit -m "applied CS341 coding standards to the project"[K[4Pstatus[1Padd .make cleanrun INPUT=test.txt 
+./driver.out test.txt
+--------------------
+*** Make the min-max heap in Figure 6.57. ***
+--------------------
+x 6
+m_heap[0] 6
+m_size 0
+hole: 1 m_size 1
+m_heap[hole/2] 6
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 6
+ 
+ 
+x 81
+m_heap[0] 81
+m_size 1
+hole: 2 m_size 2
+m_heap[hole/2] 6
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 81
+ 
+ 
+x 87
+m_heap[0] 87
+m_size 2
+hole: 3 m_size 3
+m_heap[hole/2] 6
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 87
+ 
+ 
+x 14
+m_heap[0] 14
+m_size 3
+hole: 4 m_size 4
+m_heap[hole/2] 81
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 81
+ 
+result: m_heap[hole] = 14
+ 
+ 
+x 17
+m_heap[0] 17
+m_size 4
+hole: 5 m_size 5
+m_heap[hole/2] 14
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 17
+ 
+ 
+x 12
+m_heap[0] 12
+m_size 5
+hole: 6 m_size 6
+m_heap[hole/2] 87
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 87
+ 
+result: m_heap[hole] = 12
+ 
+ 
+x 28
+m_heap[0] 28
+m_size 6
+hole: 7 m_size 7
+m_heap[hole/2] 12
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 28
+ 
+ 
+x 71
+m_heap[0] 71
+m_size 7
+hole: 8 m_size 8
+m_heap[hole/2] 81
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 81
+ 
+result: m_heap[hole] = 71
+ 
+ 
+x 25
+m_heap[0] 25
+m_size 8
+hole: 9 m_size 9
+m_heap[hole/2] 71
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 71
+ 
+result: m_heap[hole] = 25
+ 
+ 
+x 80
+m_heap[0] 80
+m_size 9
+hole: 10 m_size 10
+m_heap[hole/2] 17
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 80
+ 
+ 
+x 20
+m_heap[0] 20
+m_size 10
+hole: 11 m_size 11
+m_heap[hole/2] 17
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 20
+ 
+ 
+x 52
+m_heap[0] 52
+m_size 11
+hole: 12 m_size 12
+m_heap[hole/2] 87
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 87
+ 
+result: m_heap[hole] = 52
+ 
+ 
+x 78
+m_heap[0] 78
+m_size 12
+hole: 13 m_size 13
+m_heap[hole/2] 52
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 78
+ 
+ 
+x 31
+m_heap[0] 31
+m_size 13
+hole: 14 m_size 14
+m_heap[hole/2] 28
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 31
+ 
+ 
+x 59
+m_heap[0] 59
+m_size 14
+hole: 15 m_size 15
+m_heap[hole/2] 28
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 59
+ 
+ 
+x 16
+m_heap[0] 16
+m_size 15
+hole: 16 m_size 16
+m_heap[hole/2] 81
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 81
+ 
+  m_heap[hole] 81  m_heap[hole/2] 25
+ 
+result: m_heap[hole] = 16
+ 
+ 
+x 24
+m_heap[0] 24
+m_size 16
+hole: 17 m_size 17
+m_heap[hole/2] 25
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 25
+ 
+result: m_heap[hole] = 24
+ 
+ 
+x 79
+m_heap[0] 79
+m_size 17
+hole: 18 m_size 18
+m_heap[hole/2] 71
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 79
+ 
+ 
+x 63
+m_heap[0] 63
+m_size 18
+hole: 19 m_size 19
+m_heap[hole/2] 71
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 71
+ 
+result: m_heap[hole] = 63
+ 
+ 
+x 18
+m_heap[0] 18
+m_size 19
+hole: 20 m_size 20
+m_heap[hole/2] 80
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 80
+ 
+result: m_heap[hole] = 18
+ 
+ 
+x 19
+m_heap[0] 19
+m_size 20
+hole: 21 m_size 21
+m_heap[hole/2] 18
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 19
+ 
+ 
+x 32
+m_heap[0] 32
+m_size 21
+hole: 22 m_size 22
+m_heap[hole/2] 20
+x < m_heap[hole/2] is 0
+result: m_heap[hole] = 32
+ 
+ 
+x 13
+m_heap[0] 13
+m_size 22
+hole: 23 m_size 23
+m_heap[hole/2] 20
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 20
+ 
+  m_heap[hole] 20  m_heap[hole/2] 17
+ 
+  m_heap[hole] 17  m_heap[hole/2] 14
+ 
+result: m_heap[hole] = 13
+ 
+ 
+x 15
+m_heap[0] 15
+m_size 23
+hole: 24 m_size 24
+m_heap[hole/2] 87
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 87
+ 
+  m_heap[hole] 87  m_heap[hole/2] 52
+ 
+result: m_heap[hole] = 15
+ 
+ 
+x 48
+m_heap[0] 48
+m_size 24
+hole: 25 m_size 25
+m_heap[hole/2] 52
+x < m_heap[hole/2] is 1
+  m_heap[hole] 0  m_heap[hole/2] 52
+ 
+result: m_heap[hole] = 48
+ 
+ 
+--- min-max heap dump --- 
+  Size = 26
+  Minimum = 
+  Maximum = 
+  Last level is 
+--- heap data items --- 
+H[1] = 6
+H[2] = 13
+H[3] = 12
+H[4] = 16
+H[5] = 14
+H[6] = 15
+H[7] = 28
+H[8] = 24
+H[9] = 63
+H[10] = 18
+H[11] = 17
+H[12] = 48
+H[13] = 78
+H[14] = 31
+H[15] = 59
+H[16] = 81
+H[17] = 25
+H[18] = 79
+H[19] = 71
+H[20] = 80
+H[21] = 19
+H[22] = 32
+H[23] = 20
+H[24] = 87
+H[25] = 52
+------------------------- 
+]0;dina@pc: ~/Desktop/341_project_4dina@pc:~/Desktop/341_project_4$ exit
+exit
+
+Script done on Sat 23 Apr 2016 10:15:47 AM EDT
