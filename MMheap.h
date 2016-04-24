@@ -33,7 +33,7 @@ public:
 		Pre-condition:  vector containing the initial items
 		Post-condition:	constructs 
 	*/	
-	MMheap( const vector<Comparable> &v );
+	// MMheap( const vector<Comparable> &v );
 
 	/*	Description:    ~MMheap
 		Pre-condition:  none
@@ -83,25 +83,7 @@ public:
 	*/	
 	Comparable deleteMax();
 
-	void percolateDown( int hole );
 	
-	void percolateUp( int hole ); 
-
-	void percolateUpMin(int hole);
-
-	void percolateUpMax(int hole);
-	
-	int getLevel(int hole);
-
-	bool isMinLevel(int hole);
-
-	bool isMaxLevel(int hole);
-
-	int getParent(int hole);
-
-	bool hasParent(int hole);
-
-	void swap(int hole, int parent);
 
 private:
 
@@ -113,6 +95,26 @@ private:
 
 	void buildHeap();
 
+	void percolateDown( int hole );
+	
+	void percolateUp( int hole ); 
+
+	void percolateUpMin(int hole);
+
+	void percolateUpMax(int hole);
+
+	int getLevel(int hole);
+
+	bool isMinLevel(int hole);
+
+	bool isMaxLevel(int hole);
+
+	int getParent(int hole);
+
+	bool hasParent(int hole);
+
+	void swap(int hole, int parent);
+	
 };
 
 #include "MMheap.cpp"
