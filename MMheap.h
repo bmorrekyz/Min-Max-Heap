@@ -85,12 +85,23 @@ public:
 
 	void percolateDown( int hole );
 	
+	void percolateUp( int hole ); 
+
+	void percolateUpMin(int hole);
+
+	void percolateUpMax(int hole);
+	
 	int getLevel(int hole);
 
 	bool isMinLevel(int hole);
 
 	bool isMaxLevel(int hole);
 
+	int getParent(int hole);
+
+	bool hasParent(int hole);
+
+	void swap(int hole, int parent);
 
 private:
 

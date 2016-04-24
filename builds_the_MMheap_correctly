@@ -1,0 +1,326 @@
+Script started on Sun 24 Apr 2016 01:00:52 PM EDT
+]0;dina@pc: ~/Desktop/341_project_4dina@pc:~/Desktop/341_project_4$ make [K
+g++    -c -o MMheap.o MMheap.cpp
+g++    -c -o Driver.o Driver.cpp
+g++ -ansi -Wall MMheap.o Driver.o -o driver.out
+]0;dina@pc: ~/Desktop/341_project_4dina@pc:~/Desktop/341_project_4$ make run INPUT=test1.txt 
+./driver.out test1.txt
+--------------------
+*** Make the min-max heap in Figure 6.57. ***
+--------------------
+
+heap so far: 
+percolateUp(6) at hole: 1
+isMinLevel
+ no parent for 6
+
+heap so far: 6 
+percolateUp(81) at hole: 2
+isMaxLevel
+  x: 81 parent: 6
+    percolateUpMax
+       no GP at hole: 2
+
+heap so far: 6 81 
+percolateUp(87) at hole: 3
+isMaxLevel
+  x: 87 parent: 6
+    percolateUpMax
+       no GP at hole: 3
+
+heap so far: 6 81 87 
+percolateUp(14) at hole: 4
+isMinLevel
+  x: 14 parent: 81
+    percolateUpMin
+      x: 14 grandparent: 6
+
+heap so far: 6 81 87 14 
+percolateUp(17) at hole: 5
+isMinLevel
+  x: 17 parent: 81
+    percolateUpMin
+      x: 17 grandparent: 6
+
+heap so far: 6 81 87 14 17 
+percolateUp(12) at hole: 6
+isMinLevel
+  x: 12 parent: 87
+    percolateUpMin
+      x: 12 grandparent: 6
+
+heap so far: 6 81 87 14 17 12 
+percolateUp(28) at hole: 7
+isMinLevel
+  x: 28 parent: 87
+    percolateUpMin
+      x: 28 grandparent: 6
+
+heap so far: 6 81 87 14 17 12 28 
+percolateUp(71) at hole: 8
+isMaxLevel
+  x: 71 parent: 14
+    percolateUpMax
+      x: 71 grandparent: 81
+
+heap so far: 6 81 87 14 17 12 28 71 
+percolateUp(25) at hole: 9
+isMaxLevel
+  x: 25 parent: 14
+    percolateUpMax
+      x: 25 grandparent: 81
+
+heap so far: 6 81 87 14 17 12 28 71 25 
+percolateUp(80) at hole: 10
+isMaxLevel
+  x: 80 parent: 17
+    percolateUpMax
+      x: 80 grandparent: 81
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 
+percolateUp(20) at hole: 11
+isMaxLevel
+  x: 20 parent: 17
+    percolateUpMax
+      x: 20 grandparent: 81
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 
+percolateUp(52) at hole: 12
+isMaxLevel
+  x: 52 parent: 12
+    percolateUpMax
+      x: 52 grandparent: 87
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 
+percolateUp(78) at hole: 13
+isMaxLevel
+  x: 78 parent: 12
+    percolateUpMax
+      x: 78 grandparent: 87
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 
+percolateUp(31) at hole: 14
+isMaxLevel
+  x: 31 parent: 28
+    percolateUpMax
+      x: 31 grandparent: 87
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 
+percolateUp(42) at hole: 15
+isMaxLevel
+  x: 42 parent: 28
+    percolateUpMax
+      x: 42 grandparent: 87
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 
+percolateUp(31) at hole: 16
+isMinLevel
+  x: 31 parent: 71
+    percolateUpMin
+      x: 31 grandparent: 14
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 
+percolateUp(59) at hole: 17
+isMinLevel
+  x: 59 parent: 71
+    percolateUpMin
+      x: 59 grandparent: 14
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 
+percolateUp(16) at hole: 18
+isMinLevel
+  x: 16 parent: 25
+    percolateUpMin
+      x: 16 grandparent: 14
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 16 
+percolateUp(24) at hole: 19
+isMinLevel
+  x: 24 parent: 25
+    percolateUpMin
+      x: 24 grandparent: 14
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 16 24 
+percolateUp(79) at hole: 20
+isMinLevel
+  x: 79 parent: 80
+    percolateUpMin
+      x: 79 grandparent: 17
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 16 24 79 
+percolateUp(63) at hole: 21
+isMinLevel
+  x: 63 parent: 80
+    percolateUpMin
+      x: 63 grandparent: 17
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 16 24 79 63 
+percolateUp(18) at hole: 22
+isMinLevel
+  x: 18 parent: 20
+    percolateUpMin
+      x: 18 grandparent: 17
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 16 24 79 63 18 
+percolateUp(19) at hole: 23
+isMinLevel
+  x: 19 parent: 20
+    percolateUpMin
+      x: 19 grandparent: 17
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 16 24 79 63 18 19 
+percolateUp(32) at hole: 24
+isMinLevel
+  x: 32 parent: 52
+    percolateUpMin
+      x: 32 grandparent: 12
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 16 24 79 63 18 19 32 
+percolateUp(13) at hole: 25
+isMinLevel
+  x: 13 parent: 52
+    percolateUpMin
+      x: 13 grandparent: 12
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 16 24 79 63 18 19 32 13 
+percolateUp(15) at hole: 26
+isMinLevel
+  x: 15 parent: 78
+    percolateUpMin
+      x: 15 grandparent: 12
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 16 24 79 63 18 19 32 13 15 
+percolateUp(48) at hole: 27
+isMinLevel
+  x: 48 parent: 78
+    percolateUpMin
+      x: 48 grandparent: 12
+--- min-max heap dump --- 
+  Size = 27
+  Minimum = 
+  Maximum = 
+  Last level is even
+--- heap data items --- 
+H[1] = 6
+H[2] = 81
+H[3] = 87
+H[4] = 14
+H[5] = 17
+H[6] = 12
+H[7] = 28
+H[8] = 71
+H[9] = 25
+H[10] = 80
+H[11] = 20
+H[12] = 52
+H[13] = 78
+H[14] = 31
+H[15] = 42
+H[16] = 31
+H[17] = 59
+H[18] = 16
+H[19] = 24
+H[20] = 79
+H[21] = 63
+H[22] = 18
+H[23] = 19
+H[24] = 32
+H[25] = 13
+H[26] = 15
+H[27] = 48
+------------------------- 
+--------------------
+*** Then insert 53, 57, 13, 12, 9, 10. ***
+--------------------
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 31 42 31 59 16 24 79 63 18 19 32 13 15 48 
+percolateUp(53) at hole: 28
+isMinLevel
+  x: 53 parent: 31
+    percolateUpMax
+      x: 53 grandparent: 87
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 53 42 31 59 16 24 79 63 18 19 32 13 15 48 31 
+percolateUp(57) at hole: 29
+isMinLevel
+  x: 57 parent: 53
+    percolateUpMax
+      x: 57 grandparent: 87
+
+heap so far: 6 81 87 14 17 12 28 71 25 80 20 52 78 57 42 31 59 16 24 79 63 18 19 32 13 15 48 31 53 
+percolateUp(13) at hole: 30
+isMinLevel
+  x: 13 parent: 42
+    percolateUpMin
+      x: 13 grandparent: 28
+    percolateUpMin
+      x: 13 grandparent: 6
+
+heap so far: 6 81 87 14 17 12 13 71 25 80 20 52 78 57 42 31 59 16 24 79 63 18 19 32 13 15 48 31 53 28 
+percolateUp(12) at hole: 31
+isMinLevel
+  x: 12 parent: 42
+    percolateUpMin
+      x: 12 grandparent: 13
+    percolateUpMin
+      x: 12 grandparent: 6
+
+heap so far: 6 81 87 14 17 12 12 71 25 80 20 52 78 57 42 31 59 16 24 79 63 18 19 32 13 15 48 31 53 28 13 
+percolateUp(9) at hole: 32
+isMaxLevel
+  x: 9 parent: 31
+    percolateUpMin
+      x: 9 grandparent: 14
+    percolateUpMin
+      x: 9 grandparent: 6
+
+heap so far: 6 81 87 9 17 12 12 71 25 80 20 52 78 57 42 14 59 16 24 79 63 18 19 32 13 15 48 31 53 28 13 31 
+percolateUp(10) at hole: 33
+isMaxLevel
+  x: 10 parent: 14
+    percolateUpMin
+      x: 10 grandparent: 9
+--- min-max heap dump --- 
+  Size = 33
+  Minimum = 
+  Maximum = 
+  Last level is odd
+--- heap data items --- 
+H[1] = 6
+H[2] = 81
+H[3] = 87
+H[4] = 9
+H[5] = 17
+H[6] = 12
+H[7] = 12
+H[8] = 71
+H[9] = 25
+H[10] = 80
+H[11] = 20
+H[12] = 52
+H[13] = 78
+H[14] = 57
+H[15] = 42
+H[16] = 10
+H[17] = 59
+H[18] = 16
+H[19] = 24
+H[20] = 79
+H[21] = 63
+H[22] = 18
+H[23] = 19
+H[24] = 32
+H[25] = 13
+H[26] = 15
+H[27] = 48
+H[28] = 31
+H[29] = 53
+H[30] = 28
+H[31] = 13
+H[32] = 31
+H[33] = 14
+------------------------- 
+]0;dina@pc: ~/Desktop/341_project_4dina@pc:~/Desktop/341_project_4$ exit
+exit
+
+Script done on Sun 24 Apr 2016 01:01:01 PM EDT

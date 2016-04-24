@@ -54,25 +54,27 @@ int main(int argc, char *argv[])
     }
 
 
-  // cout << "*** Then insert 53, 57, 13, 12, 9, 10. ***" << endl;
-  // cout << "--------------------" << endl;
 
-  // theHeap.insert(53);
-  // theHeap.insert(57);
-  // theHeap.insert(13);
-  // theHeap.insert(12);
-  // theHeap.insert(9);
-  // theHeap.insert(10);
-  // theHeap.dump();
+    cout << "--------------------" << endl;
+    cout << "*** Make the min-max heap in Figure 6.57. ***" << endl;
+    cout << "--------------------" << endl;
+    for(int i; i<numbers.size();i++)
+    {
+      theHeap.insert(numbers[i]);
+    }
+    theHeap.dump();
 
-  cout << "--------------------" << endl;
-  cout << "*** Make the min-max heap in Figure 6.57. ***" << endl;
-  cout << "--------------------" << endl;
-  for( int i; i < numbers.size(); i++ )
-  {
-    theHeap.insert( numbers[i] );
-  }
-  theHeap.dump();
+    cout << "--------------------" << endl;
+    cout << "*** Then insert 53, 57, 13, 12, 9, 10. ***" << endl;
+    cout << "--------------------" << endl;
+
+    theHeap.insert(53);
+    theHeap.insert(57);
+    theHeap.insert(13);
+    theHeap.insert(12);
+    theHeap.insert(9);
+    theHeap.insert(10);
+    theHeap.dump();
 
 	return 0;
 }
