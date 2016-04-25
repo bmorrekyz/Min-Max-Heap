@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
     theHeap.deleteMin();
     theHeap.deleteMin();
     theHeap.dump();
-
+    
     cout << "--------------------" << endl;
     cout << "*** Then call deleteMax 3 times. ***"<<endl;
     cout << "--------------------" << endl;
@@ -108,7 +108,6 @@ int main(int argc, char *argv[])
     theHeap.dump();
 
     cout << "--------------------" << endl;  
-
 
     return 0;
 }

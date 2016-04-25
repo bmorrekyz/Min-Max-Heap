@@ -4,7 +4,6 @@ driver.out: MMheap.o Driver.o
 driver.o: Driver.cpp MMheap.cpp
 	g++ -ansi -Wall -c Driver.cpp MMheap.cpp
 
-
 clean:
 	rm -f *.o *.out *~ *.gch
 
