@@ -163,12 +163,6 @@ Comparable MMheap<Comparable>::getMax()
 
 
 template <typename Comparable>
-Comparable MMheap<Comparable>::deleteMin()
-{
-	cout << "deleteMin()" << endl;
-}
-
-template <typename Comparable>
 Comparable MMheap<Comparable>::deleteMax()
 {
 	cout << "deleteMax()" << endl;
@@ -208,8 +202,9 @@ Comparable MMheap<Comparable>::deleteMax()
 // 	m_heap[ hole ] = tmp;
 // }
 
+
 template <typename Comparable>
-int MMheap<Comparable>::getLevel( int hole )
+int MMheap<Comparable>::getLevel(int hole)
 {	
 	int level = floor(log2(hole));
 	return level;
@@ -275,6 +270,99 @@ void MMheap<Comparable>::swap(int hole, int parent)
 	m_heap[parent] = tempHole;
 }
 
+template <typename Comparable>
+bool MMheap<Comparable>::hasChildren(int hole)
+{
+	bool hasLeftChild = (hole < size());
+	bool hasRightChild = ((hole + 1) < size());
+
+	if (hasLeftChild || hasRightChild)
+	{
+		return true; 
+	}
+
+	else 
+	{ 
+		return false; 
+	}
+}
+
+
+template <typename Comparable>
+bool MMheap<Comparable>::hasGrandChildren(int hole)
+{
+	int leftChild = (2 * hole);
+	int rightChild = (2 * hole) + 1;
+
+	if (hasChildren(leftChild) || hasChildren(rightChild))
+	{
+		return true;
+	}
+
+	else 
+	{
+		return false;
+	}
+}
+
+
+template <typename Comparable>
+bool MMheap<Comparable>::isGrandChild(int parent, int grandChild)
+{
+	if (hasGrandChildren(parent)) 
+	{
+		if (grandChild < size())
+		{
+			return true;
+		}
+
+		else { return false; }
+	}
+
+	else { return false; }
+}
+
+
+template <typename Comparable>
+vector<Comparable> MMheap<Comparable>::getDescendants(int hole)
+{
+	vector<Comparable> descendants;
+	int leftChild = exp2(hole);
+	int rightChild = (exp2(hole) + 1);
+
+	if (hasChildren(hole))
+	{
+		descendants.push_back(m_heap[leftChild]);
+		descendants.push_back(m_heap[rightChild]);
+
+		if (hasChildren(leftChild))
+		{
+			descendants.push_back(m_heap[exp2(leftChild)]);
+			descendants.push_back(m_heap[exp2(rightChild)]);	
+		}
+
+		if (hasChildren(rightChild))
+		{
+			descendants.push_back(m_heap[exp2(leftChild)]);
+			descendants.push_back(m_heap[exp2(rightChild)]);	
+		}
+	}
+
+	return descendants;
+}
+
+
+template <typename Comparable>
+bool MMheap<Comparable>::isSmaller(int hole1, int hole2)
+{
+	if (m_heap[hole1] < m_heap[hole2])
+	{
+		return true;
+	}
+
+	else { return false; }
+}
+
 
 template <typename Comparable>
 void MMheap<Comparable>::dump()
@@ -289,12 +377,115 @@ void MMheap<Comparable>::dump()
   	if (isMinLevel(size())) { cout << "even" << endl;}
   	else if (isMaxLevel(size())) { cout << "odd" << endl;}
 
-	cout << "--- heap data items --- " << endl;
 
+	cout << "--- heap data items --- " << endl;
 	for ( int i = 1; i <= size(); i++ ) 
 	{
 		cout << "H[" << i << "] = " << m_heap[ i ] << endl;
 	}
 }
+
+
+template <typename Comparable>
+Comparable MMheap<Comparable>::deleteMin()
+{
+	
+	Comparable tmpCopy = m_heap[1];
+
+	m_heap[1] = m_heap.back();
+	m_heap.pop_back();
+
+	trickleDown(1);
+
+	return tmpCopy;
+
+}
+
+
+template <typename Comparable>
+void MMheap<Comparable>::trickleDown(int hole)
+{
+	if(isMinLevel(hole))
+	{
+		trickleDownMin(hole);
+	}
+
+	else
+	{
+		trickleDownMax(hole);
+	}
+}
+
+
+template <typename Comparable>
+void MMheap<Comparable>::trickleDownMin(int hole)
+{
+	int child1 = 2 * hole;
+	int child2 = (2 * hole) + 1;
+
+	int grandChild1 = 2 * child1;
+	int grandChild2 = (2 * child1) + 1;
+	int grandChild3 = 2 * child2;
+	int grandChild4 = (2 * child2) + 1; 
+
+
+	if (hasGrandChildren(hole))
+	{
+		if ((m_heap[grandChild1] < m_heap[grandChild3] && m_heap[grandChild1] < m_heap[grandChild4]) ||
+			(m_heap[grandChild2] < m_heap[grandChild3] && m_heap[grandChild2] < m_heap[grandChild4]))
+		{	
+			if (isSmaller(grandChild1, grandChild2))
+			{
+				swap(hole, grandChild1);
+				trickleDownMin(grandChild1);
+			}
+
+			else if (m_heap[grandChild1] == m_heap[grandChild2])
+			{
+ 				swap(hole, grandChild1);
+				trickleDownMin(grandChild1);
+			}
+
+			else
+			{
+				swap(hole, grandChild2);
+				trickleDownMin(grandChild2);
+			}
+		}
+
+		else
+		{
+			if (isSmaller(m_heap[grandChild3], m_heap[grandChild4]))
+			{
+				swap(hole, grandChild3);
+				trickleDownMin(grandChild3);
+			}
+
+			else if (m_heap[grandChild3] == m_heap[grandChild4])
+			{
+ 				swap(hole, grandChild3);
+				trickleDownMin(grandChild3);
+			}
+
+			else
+			{
+				swap(hole, grandChild4);
+				trickleDownMin(grandChild4);
+			}
+		}
+	}
+
+}
+
+
+template <typename Comparable>
+void MMheap<Comparable>::trickleDownMax(int hole)
+{
+	cout << "trickleDownMax()" << endl;
+}
+
+
+
+
 
 #endif

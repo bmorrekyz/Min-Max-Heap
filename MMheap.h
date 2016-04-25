@@ -93,7 +93,7 @@ private:
 
 	vector<Comparable> m_heap;
 
-	void buildHeap();
+	/* --- PERCOLATION methods --- */ 
 
 	void percolateDown( int hole );
 	
@@ -103,6 +103,20 @@ private:
 
 	void percolateUpMax(int hole);
 
+	/* TRICKLE DOWN methods */
+
+	void trickleDown(int hole);
+
+	void trickleDownMin(int hole);
+
+	void trickleDownMax(int hole);
+
+	/* --- HELPER methods --- */
+
+	void buildHeap();
+
+	void swap(int hole, int parent);
+
 	int getLevel(int hole);
 
 	bool isMinLevel(int hole);
@@ -110,14 +124,25 @@ private:
 	bool isMaxLevel(int hole);
 
 	int getParent(int hole);
+	
+	// int getLeftChild(int hole);
+
+	// int getRightChild(int hole);
+	
+	vector<Comparable> getDescendants(int hole);
 
 	bool hasParent(int hole);
 
-	void swap(int hole, int parent);
+	bool hasChildren(int hole);
+
+	bool hasGrandChildren(int hole);
+
+	bool isGrandChild(int parent, int grandChild);
+
+	bool isSmaller(int hole1, int hole2);
 	
 };
 
 #include "MMheap.cpp"
 
 #endif
-
