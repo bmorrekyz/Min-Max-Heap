@@ -19,13 +19,15 @@
 #include <math.h> 
 #include <cstdlib>
 
+#include "MyException.h"
+
 using namespace std;
 
 template <typename Comparable>
 class MMheap
 {
 
-	public:
+public:
 
 	/*	Description:    MMheap
 		Pre-condition:  none
@@ -83,7 +85,7 @@ class MMheap
 
 	
 
-	private:
+private:
 
 	/* DATA MEMBERS */
 
@@ -178,12 +180,40 @@ class MMheap
 	*/	
 	int getParent(int hole);
 
-
+	/*	Description:    
+		Pre-condition:  
+		Post-condition:	
+	*/	
 	bool hasLeftChild(int hole);
+
+	/*	Description:    
+		Pre-condition:  
+		Post-condition:	
+	*/	
 	bool hasRightChild(int hole);
+
+	/*	Description:    
+		Pre-condition:  
+		Post-condition:	
+	*/	
 	bool hasOneLeftGrandChild(int hole);
+
+	/*	Description:    
+		Pre-condition:  
+		Post-condition:	
+	*/	
 	bool hasTwoLeftGrandChildren(int hole);
+
+	/*	Description:    
+		Pre-condition:  
+		Post-condition:	
+	*/	
 	bool hasOneRightGrandChild(int hole); 
+
+	/*	Description:    
+		Pre-condition:  
+		Post-condition:	
+	*/	
 	bool hasTwoRightGrandChildren(int hole);
 };
 

@@ -12,12 +12,14 @@
 ***********************************************/
 
 #include "MMheap.cpp"
+#include "MyException.h"
+
 #include <iostream>
 #include <vector>
 #include <string>
 #include <fstream>
-
 #include <cstdlib>
+
 using namespace std;
 int main(int argc, char *argv[])
 {
@@ -54,32 +56,32 @@ int main(int argc, char *argv[])
     }
 
     cout << "*** Insert 18, 94, 74. ***" << endl;
-    cout << "--------------------" << endl;
+    cout << "---------------------------------------" << endl;
     theHeap2.insert(18);
     theHeap2.insert(94);
     theHeap2.insert(74);
     theHeap2.dump();
 
-    cout << "--------------------" << endl;
+    cout << "---------------------------------------" << endl;
     cout << "*** Then deleteMax. ***" << endl;
-    cout << "--------------------" << endl;
+    cout << "---------------------------------------" << endl;
 
     theHeap2.deleteMax();
     theHeap2.dump();
 
 
-    cout << "--------------------" << endl;
+    cout << "---------------------------------------" << endl;
     cout << "*** Make the min-max heap in Figure 6.57. ***" << endl;
-    cout << "--------------------" << endl;
-    for(int i=0; i < numbers.size();i++)
+    cout << "---------------------------------------" << endl;
+    for(unsigned int i=0; i < numbers.size();i++)
     {
       theHeap.insert(numbers[i]);
     }
     theHeap.dump();
     
-    cout << "--------------------" << endl;
+    cout << "---------------------------------------" << endl;
     cout << "*** Then insert 53, 57, 13, 12, 9, 10. ***" << endl;
-    cout << "--------------------" << endl;
+    cout << "---------------------------------------" << endl;
 
     theHeap.insert(53);
     theHeap.insert(57);
@@ -89,25 +91,33 @@ int main(int argc, char *argv[])
     theHeap.insert(10);
     theHeap.dump();
 
-    cout << "--------------------" << endl;
+    cout << "---------------------------------------" << endl;
     cout << "*** Then call deleteMin 3 times. ***" << endl; 
-    cout << "--------------------" << endl;
+    cout << "---------------------------------------" << endl;
 
     theHeap.deleteMin();
     theHeap.deleteMin();
     theHeap.deleteMin();
     theHeap.dump();
     
-    cout << "--------------------" << endl;
+    cout << "---------------------------------------" << endl;
     cout << "*** Then call deleteMax 3 times. ***"<<endl;
-    cout << "--------------------" << endl;
+    cout << "---------------------------------------" << endl;
 
     theHeap.deleteMax();
     theHeap.deleteMax();
     theHeap.deleteMax();
     theHeap.dump();
 
-    cout << "--------------------" << endl;  
+    cout << "---------------------------------------" << endl;  
 
+    // MMheap<string> stringHeap;
+    // stringHeap.insert("zztop"); 
+    // stringHeap.insert("aliceInChains");
+    // stringHeap.insert("gorillaz");
+    // stringHeap.insert("bush");
+    // cout << stringHeap.getMin() << endl;
+    // cout << stringHeap.getMax() << endl;
+    // stringHeap.dump();
     return 0;
 }

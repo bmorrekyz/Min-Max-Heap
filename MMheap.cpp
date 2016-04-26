@@ -141,21 +141,30 @@ void MMheap<Comparable>::percolateUpMax(int hole)
 template <typename Comparable>
 Comparable MMheap<Comparable>::getMin()
 {
-	if (size() == 2)
+	try
 	{
-		if (isSmaller(1, 2))
-		{
-			cout << "!" << endl;
-			return m_heap[1];
-		}
+		if (size() == 0) { throw MyException("Trying to access an empty heap.");}
 
-		else
+		if (size() == 2)
 		{
-			cout << "?" << endl;
-			return m_heap[2];
+			if (isSmaller(1, 2))
+			{
+				return m_heap[1];
+			}
+
+			else
+			{
+				return m_heap[2];
+			}
 		}
+		return m_heap[1];
 	}
-	return m_heap[1];
+
+	catch(MyException e)
+	{
+		cout << "Exception: " << e.getMessage() << endl;
+		exit(1);
+	}
 }
 
 
@@ -163,29 +172,36 @@ Comparable MMheap<Comparable>::getMin()
 template <typename Comparable>
 Comparable MMheap<Comparable>::getMax()
 {
-
-
-	if (size() == 1)
+	try
 	{
-		return m_heap[1];
+		if (size() == 0) { throw MyException("Trying to access an empty heap.");}
+
+		if (size() == 1)
+		{
+			return m_heap[1];
+		}
+
+		else if (size() == 2)
+		{
+			return m_heap[2];
+		}
+
+		else if (m_heap[2] > m_heap[3])
+		{
+			return m_heap[2];
+		}
+
+		else 
+		{
+			return m_heap[3];
+		}
 	}
 
-	else if (size() == 2)
+	catch(MyException e)
 	{
-		return m_heap[2];
+		cout << "Exception: " << e.getMessage() << endl;
+		exit(1);
 	}
-
-	else if (m_heap[2] > m_heap[3])
-	{
-		return m_heap[2];
-	}
-
-	else 
-	{
-		return m_heap[3];
-	}
-
-
 }
 
 
@@ -267,29 +283,41 @@ void MMheap<Comparable>::swap(int hole, int parent)
 template <typename Comparable>
 void MMheap<Comparable>::dump()
 {
-	cout << "--- min-max heap dump --- " << endl;
-
-  	cout << "  Size = " << size() << endl;
-  	cout << "  Minimum = " << getMin() << endl;
-  	cout << "  Maximum = " << getMax() << endl;
-
-  	cout << "  Last level is ";
-  	if (isMinLevel(size())) 
-  	{ 
-  		cout << "even" << endl;
-  	}
-
-  	else if (isMaxLevel(size())) 
-  	{ 
-  		cout << "odd" << endl;
-  	}
-
-
-	cout << "--- heap data items --- " << endl;
-	for ( int i = 1; i <= size(); i++ ) 
+	try
 	{
-		cout << "H[" << i << "] = " << m_heap[ i ] << endl;
+		if (size() == 0) { throw MyException("Trying to access an empty heap.");}
+
+		cout << "--- min-max heap dump --- " << endl;
+
+	  	cout << "  Size = " << size() << endl;
+	  	cout << "  Minimum = " << getMin() << endl;
+	  	cout << "  Maximum = " << getMax() << endl;
+
+	  	cout << "  Last level is ";
+	  	if (isMinLevel(size())) 
+	  	{ 
+	  		cout << "even" << endl;
+	  	}
+
+	  	else if (isMaxLevel(size())) 
+	  	{ 
+	  		cout << "odd" << endl;
+	  	}
+
+
+		cout << "--- heap data items --- " << endl;
+		for ( int i = 1; i <= size(); i++ ) 
+		{
+			cout << "H[" << i << "] = " << m_heap[ i ] << endl;
+		}
 	}
+
+	catch(MyException e) 
+	{
+		cout << "Exception: " << e.getMessage() << endl;
+		exit(1);
+	}
+
 }
 
 // used in deleteMin() to get the smaller of two children
